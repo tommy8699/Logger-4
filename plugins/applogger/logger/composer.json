@@ -1,0 +1,13 @@
+{
+    "name": "applogger/logger",
+    "type": "october-plugin",
+    "description": "Logger plugin for OctoberCMS",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "AppLogger\\Logger\\": ""
+        }
+    }
+}
