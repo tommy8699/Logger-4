@@ -6,26 +6,18 @@ use Model;
 
 class Log extends Model
 {
-    protected $table = 'applogger_logs';
+    protected $table = 'applogger_logger_logs';
 
     protected $fillable = ['name', 'arrival', 'late'];
 
+    public $timestamps = false;
+
     public $rules = [
         'name' => 'required|string|max:255',
-        'arrival' => 'required|date',
-        'late' => 'required|boolean',
     ];
 
-    public $timestamps = true;
-
-    public function beforeValidate()
+    public function isLate(): bool
     {
-        if (!$this->arrival) {
-            $this->arrival = now();
-        }
-
-        // Príklad posunu - meškanie ak arrival po 8:00:00
-        $cutoff = now()->startOfDay()->addHours(8);
-        $this->late = $this->arrival > $cutoff;
+        return now()->format('H:i') > '09:00';
     }
 }

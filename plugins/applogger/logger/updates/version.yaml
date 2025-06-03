@@ -1,5 +1,5 @@
 name: AppLogger.Logger
-description: Logger plugin for tracking arrivals
-author: Tvoje Meno
+description: Logger plugin.
+author: Tomáš Hreško
 icon: icon-clock
 version: 1.0.0
