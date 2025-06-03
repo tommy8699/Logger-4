@@ -4,8 +4,7 @@ Tento plugin implementuje jednoduchý logovací systém v rámci OctoberCMS.
 
 ## 🔧 Inštalácia
 
-1. Skopíruj plugin do `plugins/applogger/logger`
-2. Spusti migrácie:
+1.  Spusti migrácie:
    ```bash
    php artisan october:migrate
    ```
