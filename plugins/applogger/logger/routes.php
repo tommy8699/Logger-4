@@ -1,16 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use AppLogger\Logger\Http\Controllers\LogController;
+use AppLogger\Logger\Http\Controllers\Logs;
 
-Route::group(['prefix' => 'api/applogger', 'middleware' => ['api']], function () {
 
-    // GET /api/applogger/logs - všetky záznamy
-    Route::get('logs', [LogController::class, 'index']);
+Route::get('api/test', function() {
+    return response()->json(['status' => 'ok']);
+});
 
-    // GET /api/applogger/logs/{name} - logy podľa mena (route parameter!)
-    Route::get('logs/{name}', [LogController::class, 'showByName']);
-
-    // POST /api/applogger/logs - vytvorenie nového logu
-    Route::post('logs', [LogController::class, 'store']);
+Route::group(['prefix' => 'api/applogger'], function () {
+    Route::get('logs', [Logs::class, 'index']);
+    Route::get('logs/{name}', [Logs::class, 'showByName']);
+    Route::post('logs', [Logs::class, 'store']);
 });

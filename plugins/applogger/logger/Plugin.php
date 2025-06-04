@@ -16,19 +16,9 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function register()
+    public function boot()
     {
-        // Register routes for API
-        \Event::listen('router.before', function ($route) {
-            // Skontroluj, či je $route objektom Route, a zavolaj metódu getName()
-            if ($route instanceof \Illuminate\Routing\Route) {
-                if ($route->getName() == 'my.route.name') {
-
-                }
-            }
-
-            // Načítaj routy
-            require __DIR__ . '/routes.php';
-        });
+        // Zavolá sa po načítaní všetkých pluginov
+        require_once __DIR__ . '/routes.php';
     }
 }

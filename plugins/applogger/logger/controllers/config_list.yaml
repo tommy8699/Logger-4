@@ -1,0 +1,14 @@
+list:
+    columns:
+        id:
+            label: ID
+            searchable: true
+        name:
+            label: Name
+            searchable: true
+        arrival:
+            label: Arrival Time
+            type: datetime
+        late:
+            label: Late
+            type: bool

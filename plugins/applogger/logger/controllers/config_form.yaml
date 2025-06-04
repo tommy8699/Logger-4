@@ -1,0 +1,14 @@
+form:
+    fields:
+        name:
+            label: Name
+            type: text
+            span: auto
+        arrival:
+            label: Arrival Time
+            type: datetime
+            mode: datetime
+            readonly: true
+        late:
+            label: Late
+            type: switch
