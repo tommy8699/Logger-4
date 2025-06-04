@@ -1,10 +1,9 @@
 <?php
 
-namespace AppLogger\Logger\Controllers;
+namespace AppLogger\Logger\controllers\logs;
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use AppLogger\Logger\Models\Log;
 
 class Logs extends Controller
 {
