@@ -19,7 +19,15 @@ class Plugin extends PluginBase
     public function register()
     {
         // Register routes for API
-        \Event::listen('router.before', function ($route, $request) {
+        \Event::listen('router.before', function ($route) {
+            // Skontroluj, či je $route objektom Route, a zavolaj metódu getName()
+            if ($route instanceof \Illuminate\Routing\Route) {
+                if ($route->getName() == 'my.route.name') {
+
+                }
+            }
+
+            // Načítaj routy
             require __DIR__ . '/routes.php';
         });
     }
