@@ -2,20 +2,22 @@
 
 namespace AppLogger\Logger\Http\Controllers;
 
-use Illuminate\Routing\Controller; // dôležité: používame čistý Laravel controller pre API
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use AppLogger\Logger\Models\Log;
+use AppLogger\Logger\Http\Resources\LogResource;
 
 class LogController extends Controller
 {
     public function index()
     {
-        return Log::all();
+        return LogResource::collection(Log::all());
     }
 
     public function showByName($name)
     {
-        return Log::where('name', $name)->get();
+        $logs = Log::where('name', $name)->get();
+        return LogResource::collection($logs);
     }
 
     public function store(Request $request)
@@ -30,6 +32,6 @@ class LogController extends Controller
         $log->late = false;
         $log->save();
 
-        return response()->json($log, 201);
+        return new LogResource($log);
     }
 }
