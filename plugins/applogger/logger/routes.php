@@ -7,7 +7,7 @@ Route::get('api/test', function() {
     return response()->json(['status' => 'ok']);
 });
 
-Route::prefix('api/applogger')->group(function () {
+Route::prefix('api/v1')->group(function () {
     Route::get('logs', [LogController::class, 'index']);
     Route::get('logs/{name}', [LogController::class, 'showByName']);
     Route::post('logs', [LogController::class, 'store']);
