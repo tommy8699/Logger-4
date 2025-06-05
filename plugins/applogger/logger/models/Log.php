@@ -2,7 +2,7 @@
 
 namespace AppLogger\Logger\Models;
 
-use Model;
+use October\Rain\Database\Model;
 
 class Log extends Model
 {
