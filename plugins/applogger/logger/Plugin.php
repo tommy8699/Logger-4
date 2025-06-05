@@ -16,9 +16,4 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function boot()
-    {
-        // Zavolá sa po načítaní všetkých pluginov
-        require_once __DIR__ . '/routes.php';
-    }
 }
