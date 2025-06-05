@@ -4,7 +4,7 @@ namespace AppLogger\Logger\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
-use October\Rain\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateLogsTable extends Migration
 {
@@ -12,9 +12,10 @@ class CreateLogsTable extends Migration
     {
         Schema::create('applogger_logger_logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('arrival');
+            $table->timestamp('arrival')->nullable();
             $table->string('name');
-            $table->boolean('late');
+            $table->boolean('late')->default(false);
+            $table->timestamps();
         });
     }
 
