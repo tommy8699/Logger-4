@@ -1,5 +1,3 @@
-name: AppLogger.Logger
-description: Logger plugin.
-author: Tomáš Hreško
-icon: icon-clock
-version: 1.0.0
+1.0.0:
+    - First version of Logger plugin
+    - create_logs_table.php
