@@ -1,25 +1,42 @@
-<?php
+<?php namespace Applogger\Logger\Controllers;
 
-namespace AppLogger\Logger\Controllers;
-
-use Backend\Classes\Controller;
 use BackendMenu;
+use Backend\Classes\Controller;
 
+/**
+ * Logs Backend Controller
+ *
+ * @link https://docs.octobercms.com/3.x/extend/system/controllers.html
+ */
 class Logs extends Controller
 {
     public $implement = [
-        'Backend\Behaviors\ListController',
-        'Backend\Behaviors\FormController',
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class,
     ];
 
-    public $listConfig = 'config_list.yaml';
+    /**
+     * @var string formConfig file
+     */
     public $formConfig = 'config_form.yaml';
 
-    public $requiredPermissions = ['applogger.logger.access_logs'];
+    /**
+     * @var string listConfig file
+     */
+    public $listConfig = 'config_list.yaml';
 
+    /**
+     * @var array required permissions
+     */
+    public $requiredPermissions = ['applogger.logger.logs'];
+
+    /**
+     * __construct the controller
+     */
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('AppLogger.Logger', 'logger', 'logs');
+
+        BackendMenu::setContext('Applogger.Logger', 'logger', 'logs');
     }
 }

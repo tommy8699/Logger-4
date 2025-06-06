@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "b4bef8f3-e207-49b6-8eab-36468abc3ad7",
+		"name": "AppLogger Full API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16082749"
+	},
+	"item": [
+		{
+			"name": "Get All Logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applogger/logs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applogger",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Logs by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applogger/logs/Jano",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applogger",
+						"logs",
+						"Jano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Log",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Jano\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/applogger/logs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"applogger",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

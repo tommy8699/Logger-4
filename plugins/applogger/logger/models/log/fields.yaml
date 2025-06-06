@@ -1,0 +1,20 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+        label: Name
+        type: text
+        span: auto
+    arrival:
+        label: Arrival Time
+        type: datepicker
+        mode: datetime   # umožní výber aj dátumu aj času
+        span: auto
+    late:
+        label: Late
+        type: switch

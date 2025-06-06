@@ -1,23 +1,23 @@
-<?php
+<?php namespace Applogger\Logger\Models;
 
-namespace AppLogger\Logger\Models;
+use Model;
 
-use October\Rain\Database\Model;
-
+/**
+ * Log Model
+ *
+ * @link https://docs.octobercms.com/3.x/extend/system/models.html
+ */
 class Log extends Model
 {
-    protected $table = 'applogger_logger_logs';
+    use \October\Rain\Database\Traits\Validation;
 
-    protected $fillable = ['name', 'arrival', 'late'];
+    /**
+     * @var string table name
+     */
+    public $table = 'applogger_logger_logs';
 
-    public $timestamps = false;
-
-    public $rules = [
-        'name' => 'required|string|max:255',
-    ];
-
-    public function isLate(): bool
-    {
-        return now()->format('H:i') > '09:00';
-    }
+    /**
+     * @var array rules for validation
+     */
+    public $rules = [];
 }

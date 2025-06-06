@@ -1,15 +1,20 @@
 <?php
 
-use October\Rain\Database\Updates\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace Applogger\Logger\Updates;
 
+use Schema;
+use October\Rain\Database\Schema\Blueprint;
+use October\Rain\Database\Updates\Migration;
+
+/**
+ * CreateLogsTable Migration
+ *
+ * @link https://docs.octobercms.com/3.x/extend/database/structure.html
+ */
 return new class extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * up builds the migration
      */
     public function up()
     {
@@ -23,9 +28,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
+     * down reverses the migration
      */
     public function down()
     {
