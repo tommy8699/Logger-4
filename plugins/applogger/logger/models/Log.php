@@ -1,6 +1,8 @@
-<?php namespace Applogger\Logger\Models;
+<?php
 
-use Model;
+namespace Applogger\Logger\Models;
+
+use October\Rain\Database\Model;
 
 /**
  * Log Model
